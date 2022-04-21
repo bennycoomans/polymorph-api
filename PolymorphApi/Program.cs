@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen(c =>
 	{
 		if (baseType == typeof(Furniture))
 		{
-			return new List<Type> { typeof(Chair), typeof(WoodenChair) };
+			return new List<Type> { typeof(Chair), typeof(Table), typeof(WoodenChair) };
 		}
 
 		return new List<Type>();
@@ -23,10 +23,8 @@ builder.Services.AddSwaggerGenNewtonsoftSupport();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-	// app.UseOpenApi();
 	SwaggerBuilderExtensions.UseSwagger(app);
 	app.UseSwaggerUI();
 }
