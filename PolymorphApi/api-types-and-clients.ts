@@ -55,13 +55,7 @@ export class FurnitureClient {
 }
 
 export interface Furniture {
-    type: FurnitureType;
-}
-
-export enum FurnitureType {
-    Chair = "Chair",
-    Table = "Table",
-    WoodenChair = "WoodenChair",
+    type: string;
 }
 
 export class ApiException extends Error {

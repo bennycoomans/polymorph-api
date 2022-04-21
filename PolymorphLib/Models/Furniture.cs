@@ -1,20 +1,9 @@
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using NJsonSchema.Converters;
 
 namespace PolymorphLib.Models;
 
-public enum FurnitureType
-{
-	Chair,
-	Table,
-	WoodenChair
-}
-
+[JsonConverter(typeof(JsonInheritanceConverter), "type")]
 public abstract class Furniture
 {
-	[JsonConverter(typeof(StringEnumConverter))]
-	public FurnitureType Type => FurnitureType;
-
-	[JsonIgnore]
-	public abstract FurnitureType FurnitureType { get; }
 }
