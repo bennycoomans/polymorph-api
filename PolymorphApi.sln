@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphApi", "PolymorphApi\PolymorphApi.csproj", "{EB3FC45F-C651-4F86-8B1D-F137FEA32556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphLib", "PolymorphLib\PolymorphLib.csproj", "{F11014B4-E8E1-40AC-81E1-F4724258393F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB3FC45F-C651-4F86-8B1D-F137FEA32556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3FC45F-C651-4F86-8B1D-F137FEA32556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3FC45F-C651-4F86-8B1D-F137FEA32556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3FC45F-C651-4F86-8B1D-F137FEA32556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11014B4-E8E1-40AC-81E1-F4724258393F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11014B4-E8E1-40AC-81E1-F4724258393F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11014B4-E8E1-40AC-81E1-F4724258393F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11014B4-E8E1-40AC-81E1-F4724258393F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
