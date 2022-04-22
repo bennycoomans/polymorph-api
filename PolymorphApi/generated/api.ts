@@ -32,7 +32,7 @@ export interface Bed extends Furniture {
      * @type {boolean}
      * @memberof Bed
      */
-    'floats'?: boolean;
+    'floats': boolean;
 }
 /**
  * 
@@ -51,7 +51,7 @@ export interface Chair extends Furniture {
      * @type {boolean}
      * @memberof Chair
      */
-    'hasArmRests'?: boolean;
+    'hasArmRests': boolean;
 }
 /**
  * 
@@ -77,7 +77,7 @@ export interface Table extends Furniture {
      * @type {boolean}
      * @memberof Table
      */
-    'isWood'?: boolean;
+    'isWood': boolean;
 }
 /**
  * 
