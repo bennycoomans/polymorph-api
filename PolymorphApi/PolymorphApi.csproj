@@ -23,6 +23,11 @@
     </Target>
 
     <Target Name="GenerateClients" AfterTargets="GenerateSwagger" Condition=" '$(Configuration)' == 'Debug' ">
+        <Exec WorkingDirectory="$(ProjectDir)" Command="openapi-generator --version" ContinueOnError="true" ConsoleToMSBuild="true">
+            <Output TaskParameter="ConsoleOutput" PropertyName="OpenApiVersionOutput" />
+        </Exec>
+        <Error Text="It seems like you don't have openapi-generator installed. Did you follow the instructions in README.md? If you did, check the build output for the exact error message." Condition="!$(MSBuildLastTaskResult)"/>
+        <Error Text="It seems like you don't have the correct version of openapi-generator installed. It should be version 5.4.0." Condition="!$(OpenApiVersionOutput.Contains('5.4.0'))"/>
         <Exec WorkingDirectory="$(ProjectDir)" Command="openapi-generator generate -i swagger.json -g typescript-axios -o generated" />
     </Target>
 
