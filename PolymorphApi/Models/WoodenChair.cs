@@ -1,5 +1,3 @@
-using PolymorphLib.Models;
-
 namespace PolymorphApi.Models;
 
 public class WoodenChair : Chair
