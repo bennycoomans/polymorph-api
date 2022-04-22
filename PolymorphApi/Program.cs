@@ -1,4 +1,5 @@
 using PolymorphApi.Models;
+using PolymorphLib;
 using PolymorphLib.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,7 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddSwaggerGen(c =>
 {
 	c.UseOneOfForPolymorphism();
-	c.SelectDiscriminatorNameUsing(_ => "type");
+	c.SelectDiscriminatorNameUsing(_ => Constants.DISCRIMINATOR);
 
 	c.SelectSubTypesUsing(baseType =>
 	{
@@ -23,7 +24,6 @@ builder.Services.AddSwaggerGen(c =>
 		return new List<Type>();
 	});
 });
-builder.Services.AddSwaggerGenNewtonsoftSupport();
 
 var app = builder.Build();
 

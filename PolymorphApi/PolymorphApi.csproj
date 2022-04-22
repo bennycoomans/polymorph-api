@@ -17,11 +17,8 @@
         <ProjectReference Include="..\PolymorphLib\PolymorphLib.csproj" />
     </ItemGroup>
 
-    <Target Name="RestoreTools" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Debug' ">
+    <Target Name="GenerateSwagger" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)' == 'Debug' ">
         <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet tool restore" />
-    </Target>
-
-    <Target Name="GenerateSwagger" AfterTargets="RestoreTools" Condition=" '$(Configuration)' == 'Debug' ">
         <Exec WorkingDirectory="$(ProjectDir)" Command="dotnet swagger tofile --output swagger.json bin/Debug/net6.0/PolymorphApi.dll v1" />
     </Target>
 

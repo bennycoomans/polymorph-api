@@ -3,7 +3,7 @@ using NJsonSchema.Converters;
 
 namespace PolymorphLib.Models;
 
-[JsonConverter(typeof(JsonInheritanceConverter), "type")]
+[JsonConverter(typeof(JsonInheritanceConverter), Constants.DISCRIMINATOR)]
 public abstract class Furniture
 {
 }
