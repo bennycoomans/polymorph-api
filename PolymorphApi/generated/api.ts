@@ -52,6 +52,31 @@ export interface Chair extends Furniture {
      * @memberof Chair
      */
     'hasArmRests': boolean;
+    /**
+     * 
+     * @type {Details}
+     * @memberof Chair
+     */
+    'mandatoryDetails': Details;
+    /**
+     * 
+     * @type {Details}
+     * @memberof Chair
+     */
+    'optionalDetails'?: Details | null;
+}
+/**
+ * 
+ * @export
+ * @interface Details
+ */
+export interface Details {
+    /**
+     * 
+     * @type {string}
+     * @memberof Details
+     */
+    'information': string;
 }
 /**
  * 
@@ -90,7 +115,7 @@ export interface WoodenChair extends Chair {
      * @type {string}
      * @memberof WoodenChair
      */
-    'woodType'?: string | null;
+    'woodType': string;
 }
 
 /**

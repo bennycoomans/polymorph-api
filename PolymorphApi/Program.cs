@@ -9,8 +9,12 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddSwaggerGen(c =>
 {
 	c.SchemaFilter<RequireNonNullablePropertiesSchemaFilter>();
-	
+	c.SupportNonNullableReferenceTypes(); // Sets Nullable flags appropriately.
+
 	c.UseOneOfForPolymorphism();
+	c.UseAllOfToExtendReferenceSchemas(); // Allows $ref enums to be nullable
+	c.UseAllOfForInheritance();
+
 	c.SelectDiscriminatorNameUsing(_ => Constants.DISCRIMINATOR);
 	
 	c.SelectSubTypesUsing(baseType =>
