@@ -24,6 +24,19 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 /**
  * 
  * @export
+ * @interface Bed
+ */
+export interface Bed extends Furniture {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Bed
+     */
+    'floats'?: boolean;
+}
+/**
+ * 
+ * @export
  * @interface Chair
  */
 export interface Chair extends Furniture {
@@ -130,7 +143,7 @@ export const FurnitureApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFurniture(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Chair | Table | WoodenChair>>> {
+        async getFurniture(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Bed | Chair | Table | WoodenChair>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFurniture(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -149,7 +162,7 @@ export const FurnitureApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFurniture(options?: any): AxiosPromise<Array<Chair | Table | WoodenChair>> {
+        getFurniture(options?: any): AxiosPromise<Array<Bed | Chair | Table | WoodenChair>> {
             return localVarFp.getFurniture(options).then((request) => request(axios, basePath));
         },
     };

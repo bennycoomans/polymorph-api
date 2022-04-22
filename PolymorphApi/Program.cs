@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen(c =>
 	{
 		if (baseType == typeof(Furniture))
 		{
-			return new List<Type> { typeof(Chair), typeof(Table), typeof(WoodenChair) };
+			return new List<Type> { typeof(Bed), typeof(Chair), typeof(Table), typeof(WoodenChair) };
 		}
 		else if (baseType == typeof(Chair))
 		{
